@@ -13,14 +13,14 @@ namespace Tests
             var trig2 = new Triangle(2, 3, 4);
 
 
-            Assert.Throws<ArgumentException>(() => new Triangle(-1, 0, -3)); // Отрицательные и нулевые длины сторон
-            Assert.Throws<ArgumentException>(() => new Triangle(1, 2, 100));  // Несуществующий треугольник
+            Assert.Throws<ArgumentException>(() => new Triangle(-1, 0, -3)); // РћС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рµ Рё РЅСѓР»РµРІС‹Рµ РґР»РёРЅС‹ СЃС‚РѕСЂРѕРЅ
+            Assert.Throws<ArgumentException>(() => new Triangle(1, 2, 100));  // РќРµСЃСѓС‰РµСЃС‚РІСѓСЋС‰РёР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє
 
-            Assert.True(trig1.IsRectangular()); // Проверяем, что треугольник прямоугольный
-            Assert.Equal(6, trig1.CountArea(), 2); // Площадь прямоугольного треугольника
+            Assert.True(trig1.IsRectangular()); // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРє РїСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№
+            Assert.Equal(6, trig1.CountArea(), 2); // РџР»РѕС‰Р°РґСЊ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРѕРіРѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
 
-            Assert.False(trig2.IsRectangular()); // Проверяем, что треугольник не прямоугольный
-            Assert.Equal(2.9047375096555625, trig2.CountArea(), 10); // Площадь обычного треугольника
+            Assert.False(trig2.IsRectangular()); // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРє РЅРµ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№
+            Assert.Equal(2.9047375096555625, trig2.CountArea(), 10); // РџР»РѕС‰Р°РґСЊ РѕР±С‹С‡РЅРѕРіРѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
         }
 
         [Fact]
@@ -29,9 +29,9 @@ namespace Tests
 
             var circl1 = new Circle(5);
 
-            Assert.Throws<ArgumentException>(() => new Circle(-5)); // Отрицательный радиус
+            Assert.Throws<ArgumentException>(() => new Circle(-5)); // РћС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Р№ СЂР°РґРёСѓСЃ
 
-            Assert.Equal(78.53981633974483, circl1.CountArea(), 10); // Площадь круга
+            Assert.Equal(78.53981633974483, circl1.CountArea(), 10); // РџР»РѕС‰Р°РґСЊ РєСЂСѓРіР°
         }
 
         [Fact]
@@ -40,9 +40,9 @@ namespace Tests
             IFigures fig1 = new Triangle(3, 4, 5);
             IFigures fig2 = new Circle(5);
 
-            // Проверка вычисления площади через интерфейс
-            Assert.Equal(6, fig1.CountArea(), 2); // Площадь треугольника
-            Assert.Equal(78.53981633974483, fig2.CountArea(), 10); // Площадь круга
+            // РџСЂРѕРІРµСЂРєР° РІС‹С‡РёСЃР»РµРЅРёСЏ РїР»РѕС‰Р°РґРё С‡РµСЂРµР· РёРЅС‚РµСЂС„РµР№СЃ
+            Assert.Equal(6, fig1.CountArea(), 2); // РџР»РѕС‰Р°РґСЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
+            Assert.Equal(78.53981633974483, fig2.CountArea(), 10); // РџР»РѕС‰Р°РґСЊ РєСЂСѓРіР°
         }
     }
 }
